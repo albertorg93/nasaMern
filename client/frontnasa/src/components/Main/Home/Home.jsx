@@ -4,8 +4,8 @@ import axios from 'axios';
 
 const Home = () => {
   const [apod, setApod] = useState(""); // Para guardar los posts
-  const [unico, setUnico] = useState({});
-  const [input, setInput] = useState("");
+  // const [unico, setUnico] = useState({});
+  // const [input, setInput] = useState("");
   // const [debouncedInput] = useDebounce(input, 1500);
 
   useEffect(() => {

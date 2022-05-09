@@ -35,6 +35,13 @@ const getByQuery = async (req,res) => {
     
     
 }
+//Obtiene nombre y masa de aquellos meteoritos cuya masa sea la especificada (route params)
+const getAll = async (req,res) => {
+    const leer = await datoslandings.find({},'-_id')
+    res.status(200).json(leer);
+    
+}
+
 
 //Obtiene nombre y masa de aquellos meteoritos cuya masa sea la especificada (route params)
 const getNameandMass = async (req,res) => {
@@ -83,6 +90,7 @@ const createLanding = async (req,res) => {
 
 const landings = {
     getByQuery,
+    getAll,
     getNameandMass,
     getNameandClass,
     createLanding,
