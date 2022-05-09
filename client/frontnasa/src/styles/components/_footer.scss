@@ -1,7 +1,7 @@
-// @import '../utils/variables.scss';
+@import '../utils/variables.scss';
 
 .footerclass {
-    // background-color: $menu-color;
+    background-color: $menu-color;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
     font-size: 30px;
@@ -9,4 +9,5 @@
     bottom: 0;
     position:fixed;
     width: 100%;
+    text-align: center;
 }

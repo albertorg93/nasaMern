@@ -1,0 +1,22 @@
+@import '../utils/variables.scss';
+
+.header{
+    background-color: $menu-color;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    border-bottom: 3px solid black;
+    & > img {
+            width: 3rem;
+            margin-bottom: $spacing-lg;
+            margin-top: $spacing-md;
+        }
+        & > .user{
+            display: flex;
+            & > p {
+                color: $text-color;
+                margin-right: $spacing-md;
+            }
+        }
+}
