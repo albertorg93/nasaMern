@@ -10,6 +10,8 @@ const Landings = () => {
 
   const { register, handleSubmit } = useForm();
   const [asteroid, setAsteroid] = useState("");
+  const [valor, setValor] = useState([]);
+  const [option, setOption] = useState([]);
 
   const Icon = new L.Icon({
     iconUrl: require('../../../assets/asteroid.png'),
@@ -28,20 +30,44 @@ const Landings = () => {
   fetchData()
   }, [])
 
+  useEffect(() => {
+    if(option==="class")
+    {
+      const fetchData = async () => {
+        const res = await axios.get(`http://localhost:5000/api/astronomy/landings/class/${valor}`)
+        const data = await res.data.slice(0,50)
+        setAsteroid(data)
+        
+    }
+   fetchData()
+    } else if(option==="mass"){
+      const fetchData = async () => {
+        const res = await axios.get(`http://localhost:5000/api/astronomy/landings/mass/${valor}`)
+        const data = await res.data.slice(0,50)
+        setAsteroid(data)
+        
+    }
+   fetchData()
+    }
+  
+   }, [valor])
+
+
+
+
 
   const onSubmit = (data,e) => {
-    console.log(data,"esto es data")
-    // createPoke(data);
-    // setPage(true);
-    console.log(e.target.valor.value,"esto es el input");
-    e.targe.valor.value='';
+    const {valor, option} = data;
+    setOption(option)
+    setValor(valor)
+    e.target.valor.value='';
   }
   console.log(asteroid)
   if(asteroid){return (
     <div>
 
             <form onSubmit={handleSubmit(onSubmit)} className="searchLanding">  
-              <label>Choose asteroid to find:</label>
+              <label>Search an asteroid by his properties</label>
               <input name="valor" className='valor'  {...register("valor")}/>
               <select id="option" name="option" form="option" required {...register("option")}>
                   <option value="class">Class</option>

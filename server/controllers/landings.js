@@ -46,7 +46,7 @@ const getAll = async (req,res) => {
 //Obtiene nombre y masa de aquellos meteoritos cuya masa sea la especificada (route params)
 const getNameandMass = async (req,res) => {
     let massid = req.params.id
-    const leer = await datoslandings.find({mass: {$eq:massid}},'name mass -_id')
+    const leer = await datoslandings.find({mass: {$eq:massid}},'-_id')
     res.status(200).json(leer);
     
 }
@@ -54,7 +54,7 @@ const getNameandMass = async (req,res) => {
 //Obtiene nombre y clase de aquellos meteoritos cuya clase sea la registrada (route params)​
 const getNameandClass = async (req,res) => {
     let classid = req.params.id
-    const leer = await datoslandings.find({recclass: {$eq:classid}},'name recclass -_id')
+    const leer = await datoslandings.find({recclass: {$eq:classid}},'-_id')
     res.status(200).json(leer);
     
 }
