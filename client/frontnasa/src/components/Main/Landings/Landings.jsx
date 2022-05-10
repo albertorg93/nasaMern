@@ -1,5 +1,5 @@
 import React,{ useState, useEffect } from "react";
-import { MapContainer, TileLayer, Marker} from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup} from 'react-leaflet';
 import axios from 'axios';
 import { useForm } from "react-hook-form";
 import 'leaflet/dist/leaflet.css';  
@@ -63,6 +63,7 @@ const Landings = () => {
     e.target.valor.value='';
   }
   console.log(asteroid)
+  
   if(asteroid){return (
     <div>
 
@@ -91,6 +92,17 @@ const Landings = () => {
                 position={[data.geolocation[0].latitude, data.geolocation[0].longitude]}
                 icon={Icon}
               >
+                <Popup>
+                 <ul className="tarjeta">
+                   <li>Name: {data.name}</li>
+                   <li>Id: {data.id}</li>
+                   <li>Mass: {data.mass}</li>
+                   <li>Class: {data.recclass}</li>
+                   <li>Landing Year: {data.year.slice(0,4)}</li>
+                   {/* <li>{data.name}</li> */}
+
+                 </ul>
+              </Popup>
               </Marker>) : null )}
           </MapContainer>
     </div>
