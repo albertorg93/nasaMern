@@ -13,11 +13,6 @@ const Neas = () => {
   const [valor, setValor] = useState([]);
   const [option, setOption] = useState([]);
 
-  const Icon = new L.Icon({
-    iconUrl: require('../../../assets/asteroid.png'),
-    popupAnchor: [0, -10],
-    iconSize: new L.Point(60, 60)
-  });
 
 
   useEffect(() => {

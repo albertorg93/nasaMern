@@ -33,6 +33,12 @@ const getByQuery = async (req,res) => {
     
 }
 
+const getAll = async (req,res) => {
+    const leer = await datosNeas.find({},'-_id')
+    res.status(200).json(leer);
+    
+}
+
 //funcion que permite guardar una neas nueva mediante post
 const createNeas = async (req,res) => {
     
@@ -66,6 +72,7 @@ const createNeas = async (req,res) => {
 
 const landings = {
      getByQuery,
+     getAll,
      createNeas,
      editNeas,
      deleteNeas

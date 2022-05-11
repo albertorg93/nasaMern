@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import 'leaflet/dist/leaflet.css';  
 import "./Landings.css";
 import L from "leaflet"
+import { Link } from "react-router-dom";
 
 const Landings = () => {
 
@@ -66,7 +67,7 @@ const Landings = () => {
   
   if(asteroid){return (
     <div>
-
+           <div className="formandlist">
             <form onSubmit={handleSubmit(onSubmit)} className="searchLanding">  
               <label>Search an asteroid by his properties</label>
               <input name="valor" className='valor'  {...register("valor")}/>
@@ -76,7 +77,9 @@ const Landings = () => {
                </select>
                   <input type="submit" value="Send"/>
              </form>
-
+             <Link to="/landlist" className="alllist">View all landings</Link>
+             </div>
+               
      <MapContainer
               center={["40.4689", "-3.7786"]}
               zoom={3}
@@ -105,6 +108,8 @@ const Landings = () => {
               </Popup>
               </Marker>) : null )}
           </MapContainer>
+
+         
     </div>
     )} else {
       console.log("no entra aqui");

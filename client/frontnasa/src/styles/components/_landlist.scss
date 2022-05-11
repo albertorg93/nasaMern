@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&display=swap');
+
+.landstarjeta{
+    width: 100%;
+    max-width: 400px;
+    min-height: 300px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 7px solid rgb(7, 7, 7);
+    border-radius: 30px;
+    // background-color: rgb(141, 242, 187);
+    background-color: #7a3838;
+    // background-image: linear-gradient(to bottom, #eb1111, #ec4d00, #ec6e00, #ea8a07, #e8a323);
+    background-image: url("http://atlas-content-cdn.pixelsquid.com/stock-images/asteroid-rA3VklF-600.jpg");
+    font-family: 'Oleo Script Swash Caps', cursive;
+    font-size: 1.3rem;
+    box-shadow: 17px 17px 27px 11px rgba(200, 109, 109, 0.76);
+      -webkit-box-shadow: 17px 17px 27px 11px rgba(200, 109, 109, 0.76);
+      -moz-box-shadow: 17px 17px 27px 11px rgba(200, 109, 109, 0.76);
+}
