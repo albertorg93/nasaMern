@@ -10,3 +10,10 @@
     align-items: center;
     justify-content: center;
 }
+
+.picture img{
+    border-radius: 60px;
+    box-shadow: 17px 17px 27px 11px rgba(200, 109, 109, 0.76);
+      -webkit-box-shadow: 17px 17px 27px 11px rgba(200, 109, 109, 0.76);
+      -moz-box-shadow: 17px 17px 27px 11px rgba(200, 109, 109, 0.76);
+}

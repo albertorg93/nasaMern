@@ -5,13 +5,14 @@ import { useForm } from "react-hook-form";
 import 'leaflet/dist/leaflet.css';  
 import "./Landlist.css";
 import L from "leaflet"
+import Card from './Cardland'
 
 const Landlist = () => {
 
   const { register, handleSubmit } = useForm();
   const [listLandings, setlistLandings] = useState("");
-  const [valor, setValor] = useState([]);
-  const [option, setOption] = useState([]);
+  // const [valor, setValor] = useState([]);
+  // const [option, setOption] = useState([]);
 
 
   useEffect(() => {
@@ -23,26 +24,12 @@ const Landlist = () => {
    }
   fetchData()
   }, [])
-
-
-  console.log(listLandings)
-
   
   if(listLandings){return (
     <div>
-          {listLandings.map((data, i) =>
-                data.geolocation ? (
-                  
-                <div className="landstarjeta">
-                 <ul>
-                   <li>Name: {data.name}</li>
-                   <li>Id: {data.id}</li>
-                   <li>Mass: {data.mass}</li>
-                   <li>Class: {data.recclass}</li>
-                   <li>Landing Year: {data.year.slice(0,4)}</li>
-                 </ul>
-                 </div>
-                
+          {listLandings.map((datos, i) =>
+                datos.geolocation ? (
+                   <Card data={datos} key={i}/>
            ) : null )}
     </div>
     )} else {

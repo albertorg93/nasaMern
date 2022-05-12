@@ -15,7 +15,7 @@ const Landings = () => {
   const [option, setOption] = useState([]);
 
   const Icon = new L.Icon({
-    iconUrl: require('../../../assets/asteroid.png'),
+    iconUrl: require('../../../assets/pug.png'),
     popupAnchor: [0, -10],
     iconSize: new L.Point(60, 60)
   });
@@ -63,7 +63,6 @@ const Landings = () => {
     setValor(valor)
     e.target.valor.value='';
   }
-  console.log(asteroid)
   
   if(asteroid){return (
     <div>

@@ -10,12 +10,17 @@
     justify-content: center;
     align-items: center;
     border: 5px solid rgb(7, 7, 7);
-    border-radius: 30px;
+    border-radius: 60px;
+    
     // background-color: rgb(141, 242, 187);
-    background-color: rgb(246, 174, 79);
+    background-color: rgb(255, 198, 124);
     font-family: 'Oleo Script Swash Caps', cursive;
     font-size: 1.3rem;
     box-shadow: 17px 17px 27px 11px rgba(200, 109, 109, 0.76);
       -webkit-box-shadow: 17px 17px 27px 11px rgba(200, 109, 109, 0.76);
       -moz-box-shadow: 17px 17px 27px 11px rgba(200, 109, 109, 0.76);
+}
+
+.neastarjeta li{
+  color:rgb(0, 0, 0)
 }

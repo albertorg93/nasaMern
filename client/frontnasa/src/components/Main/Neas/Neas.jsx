@@ -26,8 +26,6 @@ const Neas = () => {
   }, [])
 
 
-  console.log(neas)
-
   
   if(neas){return (
     <div>
@@ -36,7 +34,7 @@ const Neas = () => {
                 <div className="neastarjeta">
                  <ul>
                    <li>Designation: {data.designation}</li>
-                   <li>Discovery date: {data.discovery_date}</li>
+                   <li>Discovery date: {data.discovery_date.slice(0,10)}</li>
                    <li>Orbit class: {data.orbit_class}</li>
                    <li>Period year: {data.period_yr}</li>
                  </ul>
