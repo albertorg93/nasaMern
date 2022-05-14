@@ -39,18 +39,22 @@ const Neas = () => {
 
   
   if(items){return (
-    <div>
-    <div>{items.map((data, i) =>
+    <>
+    <div className="cardcontainer">
+     
+    {items.map((data, i) =>
       data.designation ? (
-        <Card key={i} data={data}/>
+        <Card key={i} data={data} />
        ) : null )}
        </div>
-       <div className="paginacion">
+        <div className="paginacion"> 
          <button onClick={prevPage}> Prev </button>
          <button onClick={nextPage}> Next </button>
-         <h1> Current page  {currentPage}</h1>
-         </div>
-    </div>
+         <h1 className="current"> Page {currentPage}</h1>
+          </div> 
+  
+   
+    </>
     )} else {
       console.log("no entra aqui");
     }

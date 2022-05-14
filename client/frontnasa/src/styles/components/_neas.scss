@@ -24,3 +24,24 @@
 .neastarjeta li{
   color:rgb(0, 0, 0)
 }
+
+.paginacion{
+  text-align: center;
+  background-color: rgb(227, 180, 180);
+
+}
+
+.current{
+  margin-top: 1px;
+  margin-bottom: 35px;
+}
+
+.cardcontainer{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(227, 180, 180);
+}
+

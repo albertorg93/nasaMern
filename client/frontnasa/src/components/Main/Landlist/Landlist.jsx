@@ -52,7 +52,7 @@ const Landlist = () => {
            <div className="paginacion">
               <button onClick={prevPage}> Prev </button>
               <button onClick={nextPage}> Next </button>
-              <h1> {currentPage} Current page</h1>
+              <h1 className="current"> Page {currentPage} </h1>
          </div>
           </div>
     )} else {

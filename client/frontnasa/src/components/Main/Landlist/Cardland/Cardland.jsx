@@ -1,6 +1,7 @@
 import React from "react";
 // import axios from 'axios';
 
+
 const Cardland = (props) => {
   const info = props.data
 
@@ -20,7 +21,10 @@ const Cardland = (props) => {
                    <li>Class: {info.recclass}</li>
                    {/* <li>Landing Year: {info.year.slice(0,4)}</li> */}
                  </ul>
+                 <div>
+                 <button onClick={removeLanding}>Editar</button>
                  <button onClick={removeLanding}>Borrar</button>
+                 </div>
                  </div>;
               
 };
