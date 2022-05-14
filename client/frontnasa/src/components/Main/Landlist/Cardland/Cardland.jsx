@@ -1,12 +1,12 @@
 import React from "react";
-import axios from 'axios';
+// import axios from 'axios';
 
 const Cardland = (props) => {
   const info = props.data
 
   const removeLanding = () =>  {
     console.log(info)
-    let valor = info
+    // let valor = info
    // axios.delete('http://localhost:5000/api/astronomy/landings/delete', info);
     // axios.delete('http://localhost:5000/api/astronomy/landings/delete',{ data: info})
 

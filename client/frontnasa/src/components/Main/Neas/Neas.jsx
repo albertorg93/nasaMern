@@ -1,45 +1,55 @@
 import React,{ useState, useEffect } from "react";
-import { MapContainer, TileLayer, Marker, Popup} from 'react-leaflet';
 import axios from 'axios';
-import { useForm } from "react-hook-form";
-import 'leaflet/dist/leaflet.css';  
-import "./Neas.css";
-import L from "leaflet"
+import Card from './Cardnea'
 
+const ITEMS_PER_PAGE = 10;
 const Neas = () => {
 
-  const { register, handleSubmit } = useForm();
   const [neas, setNeas] = useState("");
-  const [valor, setValor] = useState([]);
-  const [option, setOption] = useState([]);
+  const [items, setItems] = useState([])
+  const [currentPage, setCurrentPage] = useState(0);
 
+  const nextPage = () => {
+    const totalElements = neas.length;
+    const nextPage = currentPage + 1;
+    const firstIndexOfNextPage = nextPage * ITEMS_PER_PAGE;
+    if (firstIndexOfNextPage === totalElements) return;
+    setItems([...neas].splice(firstIndexOfNextPage, ITEMS_PER_PAGE));
+    setCurrentPage(nextPage);
+  };
 
+  const prevPage = () => {
+    const prevPage = currentPage - 1;
+    if (prevPage < 0) return;
+    const firstIndexOfPrevPage = prevPage * ITEMS_PER_PAGE;
+    setItems([...neas].splice(firstIndexOfPrevPage, ITEMS_PER_PAGE));
+    setCurrentPage(prevPage);
+  };
 
   useEffect(() => {
    const fetchData = async () => {
        const res = await axios.get('http://localhost:5000/api/astronomy/neas/all')
-       const data = await res.data.slice(0,50)
+       const data = await res.data.slice(0,100)
        setNeas(data)
-       
+       setItems([...data].slice(0, ITEMS_PER_PAGE))  
    }
   fetchData()
   }, [])
 
 
   
-  if(neas){return (
+  if(items){return (
     <div>
-          {neas.map((data, i) =>
-                data.designation ? (
-                <div className="neastarjeta">
-                 <ul>
-                   <li>Designation: {data.designation}</li>
-                   <li>Discovery date: {data.discovery_date.slice(0,10)}</li>
-                   <li>Orbit class: {data.orbit_class}</li>
-                   <li>Period year: {data.period_yr}</li>
-                 </ul>
-                 </div>
-           ) : null )}
+    <div>{items.map((data, i) =>
+      data.designation ? (
+        <Card key={i} data={data}/>
+       ) : null )}
+       </div>
+       <div className="paginacion">
+         <button onClick={prevPage}> Prev </button>
+         <button onClick={nextPage}> Next </button>
+         <h1> Current page  {currentPage}</h1>
+         </div>
     </div>
     )} else {
       console.log("no entra aqui");

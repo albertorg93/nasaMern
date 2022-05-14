@@ -29,6 +29,7 @@ const Landings = () => {
        
    }
   fetchData()
+  // eslint-disable-next-line
   }, [])
 
   useEffect(() => {
@@ -50,7 +51,7 @@ const Landings = () => {
     }
    fetchData()
     }
-  
+  // eslint-disable-next-line
    }, [valor])
 
 
