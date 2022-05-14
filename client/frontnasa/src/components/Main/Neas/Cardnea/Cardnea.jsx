@@ -1,5 +1,5 @@
 import React from "react";
-// import axios from 'axios';
+import axios from 'axios';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
@@ -21,15 +21,25 @@ const Cardnea = (props) => {
   const pictures = [nea1,nea2,nea3];
   const randomizeImages = pictures.sort((a, b) => 0.5 - Math.random());
 
-  const removeLanding = () =>  {
+ 
+
+  const updateNea = () =>  {
     console.log(info)
-    // let valor = info
+    let valor = info
    // axios.delete('http://localhost:5000/api/astronomy/neas/delete', info);
-    // axios.delete('http://localhost:5000/api/astronomy/neas/delete',{ data: info})
+    axios.delete('http://localhost:5000/api/astronomy/neas/delete',{ data: info})
 
   }
 
- return            <Card sx={{ maxWidth: 325, margin: 2,minHeight: 325, minWidth:325, borderRadius: 5 }}>
+  const removeNea = () =>  {
+    console.log(info)
+    let valor = info
+   // axios.delete('http://localhost:5000/api/astronomy/neas/delete', info);
+    axios.delete('http://localhost:5000/api/astronomy/neas/delete',{ data: info})
+
+  }
+
+ return            <Card sx={{ maxWidth: 325, margin: 2,minHeight: 325, minWidth:325, borderRadius: 5}}>
                     <CardMedia
                       component="img"
                       height="180"
@@ -37,19 +47,19 @@ const Cardnea = (props) => {
                       alt="neas picture"
                     />
                     <CardContent>
-                      <Typography gutterBottom variant="h5" component="div">
+                      <Typography gutterBottom variant="h5" component="div" fontSize={26}>
                       Designation: {info.designation}
                       </Typography>
-                      <Typography variant="body2" color="text.secondary">
+                      <Typography variant="body2" color="text.secondary" fontWeight='bold' fontSize={20}>
                       Discovery date: {info.discovery_date.slice(0,10)}
                       </Typography>
-                      <Typography variant="body2" color="text.secondary">
+                      <Typography variant="body2" color="text.secondary" fontWeight='bold' fontSize={20}>
                       Orbit class: {info.orbit_class}
                       </Typography>
                     </CardContent>
                     <CardActions>
-                      <Button size="small">Update</Button>
-                      <Button size="small">Delete</Button>
+                      <Button size="small" onClick={updateNea}>Update</Button>
+                      <Button size="small" onClick={removeNea}>Delete</Button>
                     </CardActions>
                     </Card>
                

@@ -42,8 +42,8 @@ const Landlist = () => {
   
   
   if(items){return (
-    <div>
-    <div>
+    <>
+    <div className="cardcontainer">
           {items.map((datos, i) =>
                 datos.geolocation && datos.year? (
                   <Card key={i} data={datos}/>
@@ -54,7 +54,8 @@ const Landlist = () => {
               <button onClick={nextPage}> Next </button>
               <h1 className="current"> Page {currentPage} </h1>
          </div>
-          </div>
+
+         </>
     )} else {
       console.log("no entra aqui");
     }
