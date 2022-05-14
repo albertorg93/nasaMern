@@ -15,7 +15,7 @@ const Landings = () => {
   const [option, setOption] = useState([]);
 
   const Icon = new L.Icon({
-    iconUrl: require('../../../assets/pug.png'),
+    iconUrl: require('../../../assets/asteroid.png'),
     popupAnchor: [0, -10],
     iconSize: new L.Point(60, 60)
   });
