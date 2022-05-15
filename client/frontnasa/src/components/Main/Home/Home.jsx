@@ -13,9 +13,6 @@ const override = css`
 
 const Home = () => {
   const [apod, setApod] = useState(""); // Para guardar los posts
-  // const [unico, setUnico] = useState({});
-  // const [input, setInput] = useState("");
-  // const [debouncedInput] = useDebounce(input, 1500);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,6 +23,7 @@ const Home = () => {
    fetchData()
    }, [])
 
+  
 
 
   if(apod) {return <>

@@ -54,7 +54,7 @@ const createNeas = async (req,res) => {
    //function que elimina un neas dependiendo de la designation que le pasemos por el body
     const editNeas = async (req,res) => {
     value=req.body.designation
-    console.log(value)
+    console.log(req.body)
     const response = await datosNeas.findOneAndUpdate({designation: value}, req.body)
     res.status(201).send(`Neas con designation: "${value}" editada correctamente`)
 }
