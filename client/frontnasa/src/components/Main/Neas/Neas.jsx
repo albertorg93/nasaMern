@@ -1,6 +1,15 @@
 import React,{ useState, useEffect } from "react";
 import axios from 'axios';
 import Card from './Cardnea'
+import { css } from "@emotion/react";
+import RingLoader from "react-spinners/RingLoader";
+
+const override = css`
+  display: block;
+  margin-top: 100px;
+  margin-left: 50%;
+  border-color: lime;
+`;
 
 const ITEMS_PER_PAGE = 10;
 const Neas = () => {
@@ -38,7 +47,7 @@ const Neas = () => {
 
 
   
-  if(items){return (
+  if(neas){return (
     <>
     <div className="cardcontainer">
      
@@ -56,7 +65,12 @@ const Neas = () => {
    
     </>
     )} else {
-      console.log("no entra aqui");
+      return(
+        <>
+      <RingLoader color={"red"} loading={true} css={override} size={80} speedMultiplier={1} margin={2}/>
+        </>
+       
+      )
     }
   
  

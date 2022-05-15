@@ -1,6 +1,15 @@
 import React , {useEffect, useState} from "react";
 import logospace from '../../../assets/spacestation.png'
 import axios from 'axios';
+import { css } from "@emotion/react";
+import RingLoader from "react-spinners/RingLoader";
+
+const override = css`
+  display: block;
+  margin-top: 100px;
+  margin-left: 50%;
+  border-color: lime;
+`;
 
 const Home = () => {
   const [apod, setApod] = useState(""); // Para guardar los posts
@@ -19,7 +28,7 @@ const Home = () => {
 
 
 
-  return <>
+  if(apod) {return <>
   <div className='inicio'>
     <img className='logoinicial' src={logospace} alt="logopokemon" style={{width : 160}}/>
     <h1 className='welcome'> WELCOME TO THE NASA APP MERN</h1>
@@ -33,6 +42,14 @@ const Home = () => {
   </>
   ;
 
+} else {
+  return(
+    <>
+  <RingLoader color={"lime"} loading={true} css={override} size={80} speedMultiplier={1} margin={2}/>
+    </>
+   
+  )
+}
 };
 
 export default Home;

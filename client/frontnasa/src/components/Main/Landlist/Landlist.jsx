@@ -3,6 +3,15 @@ import axios from 'axios';
 import 'leaflet/dist/leaflet.css';  
 import "./Landlist.css";
 import Card from './Cardland'
+import { css } from "@emotion/react";
+import RingLoader from "react-spinners/RingLoader";
+
+const override = css`
+  display: block;
+  margin-top: 100px;
+  margin-left: 50%;
+  border-color: lime;
+`;
 
 
 const ITEMS_PER_PAGE = 10;
@@ -41,7 +50,7 @@ const Landlist = () => {
 
   
   
-  if(items){return (
+  if(listLandings){return (
     <>
     <div className="cardcontainer">
           {items.map((datos, i) =>
@@ -57,7 +66,12 @@ const Landlist = () => {
 
          </>
     )} else {
-      console.log("no entra aqui");
+      return(
+        <>
+      <RingLoader color={"orange"} loading={true} css={override} size={80} speedMultiplier={1} margin={2}/>
+        </>
+       
+      )
     }
   
  

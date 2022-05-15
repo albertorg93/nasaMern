@@ -38,7 +38,7 @@ const Cardland = (props) => {
   }
 
 
-  return <Card sx={{ maxWidth: 325, margin: 2,minHeight: 325, minWidth:325, borderRadius: 5}}>
+  return <Card sx={{ maxWidth: 325, margin: 2,minHeight: 400, minWidth:325, borderRadius: 5}}>
                   <CardMedia
                     component="img"
                     height="180"
@@ -50,17 +50,12 @@ const Cardland = (props) => {
                     Name: {info.name}
                     </Typography>
                     <Typography variant="body2" color="text.secondary" fontWeight='bold' fontSize={20}>
-                    Id: {info.id}
+                    Landing Year: {info.year.slice(0,4)}
                     </Typography>
                     <Typography variant="body2" color="text.secondary" fontWeight='bold' fontSize={20}>
                     Mass: {info.mass}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary" fontWeight='bold' fontSize={20}>
-                    Class: {info.recclass}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary" fontWeight='bold' fontSize={20}>
-                    Landing Year: {info.year.slice(0,4)}
-                    </Typography>
+                   
                   </CardContent>
                   <CardActions>
                     <Button size="small" onClick={updateLanding}>Update</Button>

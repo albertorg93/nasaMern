@@ -39,7 +39,7 @@ const Cardnea = (props) => {
 
   }
 
- return            <Card sx={{ maxWidth: 325, margin: 2,minHeight: 325, minWidth:325, borderRadius: 5}}>
+ return            <Card sx={{ maxWidth: 325, margin: 2,minHeight: 400, minWidth:325, borderRadius: 5}}>
                     <CardMedia
                       component="img"
                       height="180"

@@ -6,6 +6,15 @@ import 'leaflet/dist/leaflet.css';
 import "./Landings.css";
 import L from "leaflet"
 import { Link } from "react-router-dom";
+import { css } from "@emotion/react";
+import RingLoader from "react-spinners/RingLoader";
+
+const override = css`
+  display: block;
+  margin-top: 100px;
+  margin-left: 50%;
+  border-color: lime;
+`;
 
 const Landings = () => {
 
@@ -112,7 +121,13 @@ const Landings = () => {
          
     </div>
     )} else {
-      console.log("no entra aqui");
+     return(
+       <>
+     <RingLoader color={"red"} loading={true} css={override} size={80} speedMultiplier={1} margin={2}/>
+       </>
+      
+     )
+  
     }
   
  
