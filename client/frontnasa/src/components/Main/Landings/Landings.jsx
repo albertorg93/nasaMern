@@ -93,10 +93,14 @@ const Landings = () => {
               center={["40.4689", "-3.7786"]}
               zoom={3}
               style={{ height: '80vh' }}>
-              <TileLayer
+              {/* <TileLayer
                   attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                   url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
-              />
+              /> */}
+                 <TileLayer
+                     attribution='Tiles courtesy of the <a href="https://usgs.gov/">U.S. Geological Survey</a>'
+                  url="https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryTopo/MapServer/tile/{z}/{y}/{x}"
+                  />
               {asteroid.map((data, i) =>
                 data.geolocation ? (
               <Marker
