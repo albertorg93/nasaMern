@@ -11,15 +11,17 @@ import logo from '../../../../assets/asteroid.png'
 import Grid from '@mui/material/Grid';
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
-import nea1 from "../../../../assets/neas/nea1.png";
-import nea2 from "../../../../assets/neas/nea2.png";
-import nea3 from "../../../../assets/neas/nea3.png";
+import land1 from "../../../../assets/landings/land1.png";
+import land2 from "../../../../assets/landings/land2.png";
+import land3 from "../../../../assets/landings/land3.png";
+import land4 from "../../../../assets/landings/land4.png";
+import land5 from "../../../../assets/landings/land5.png";
 
 
 const Cardland = (props) => {
   const info = props.data
 
-  const pictures = [nea1,nea2,nea3];
+  const pictures = [land1,land2,land3, land4, land5];
   const randomizeImages = pictures.sort((a, b) => 0.5 - Math.random());
   const removeLanding = () =>  {
     console.log(info)

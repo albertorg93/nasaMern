@@ -11,14 +11,16 @@ import logo from '../../../../assets/asteroid.png'
 import Grid from '@mui/material/Grid';
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
-import nea1 from "../../../../assets/neas/nea1.png";
-import nea2 from "../../../../assets/neas/nea2.png";
-import nea3 from "../../../../assets/neas/nea3.png";
+import neas1 from "../../../../assets/neas/neas1.png";
+import neas2 from "../../../../assets/neas/neas2.png";
+import neas3 from "../../../../assets/neas/neas3.png";
+import neas4 from "../../../../assets/neas/neas4.png";
+import neas5 from "../../../../assets/neas/neas5.png";
 
 const Cardnea = (props) => {
   const info = props.data
 
-  const pictures = [nea1,nea2,nea3];
+  const pictures = [neas1,neas2,neas3,neas4,neas5];
   const randomizeImages = pictures.sort((a, b) => 0.5 - Math.random());
 
  
