@@ -21,19 +21,11 @@ const Cardnea = (props) => {
   const {register, handleSubmit} = useForm()
   const randomizeImages = pictures.sort((a, b) => 0.5 - Math.random());
 
-  // const updateNea = (e) =>  {
-  //   // console.log(info)
-  //   //  let valor = info
-  //  // axios.delete('http://localhost:5000/api/astronomy/neas/delete', info);
-  //   // axios.delete('http://localhost:5000/api/astronomy/neas/delete',{ data: info})
-
-  // }
-
   const removeNea = () =>  {
   //   console.log(info)
   //   let valor = info
   //  // axios.delete('http://localhost:5000/api/astronomy/neas/delete', info);
-  //   axios.delete('http://localhost:5000/api/astronomy/neas/delete',{ data: info})
+     axios.delete('http://localhost:5000/api/astronomy/neas/delete',{ data: info})
 
   }
 

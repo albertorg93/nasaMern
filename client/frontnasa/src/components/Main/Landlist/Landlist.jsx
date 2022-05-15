@@ -5,6 +5,7 @@ import "./Landlist.css";
 import Card from './Cardland'
 import { css } from "@emotion/react";
 import RingLoader from "react-spinners/RingLoader";
+import { Link } from "react-router-dom";
 
 const override = css`
   display: block;
@@ -52,6 +53,7 @@ const Landlist = () => {
   
   if(listLandings){return (
     <>
+    <Link to="/createlanding"><button>Add new landing</button></Link>
     <div className="cardcontainer">
           {items.map((datos, i) =>
                 datos.geolocation && datos.year? (

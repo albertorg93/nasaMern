@@ -3,6 +3,8 @@ import axios from 'axios';
 import Card from './Cardnea'
 import { css } from "@emotion/react";
 import RingLoader from "react-spinners/RingLoader";
+import { Link } from 'react-router-dom';
+import Button from '@mui/material/Button';
 
 const override = css`
   display: block;
@@ -49,6 +51,7 @@ const Neas = () => {
   
   if(neas){return (
     <>
+    <Link to="/createneas"><Button variant="contained">Add new neas</Button></Link>
     <div className="cardcontainer">
      
     {items.map((data, i) =>
