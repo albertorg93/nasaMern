@@ -36,7 +36,7 @@ const Home = () => {
     </div> 
       
       <div className="picture">
-        <h1>Author: {apod.copyright}</h1>
+        <h1>Author of the APOD: {apod.copyright}</h1>
          <h1>Date: {apod.date}</h1> 
          <img src={apod.url} alt="apod" />
          <h1 className="home">{apod.explanation}</h1>

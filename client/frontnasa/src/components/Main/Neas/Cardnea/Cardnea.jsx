@@ -38,7 +38,7 @@ const Cardnea = (props) => {
   };
 
   
-  const onSubmit = data => {
+  const updateNea = data => {
     let desig = {"designation": info.designation}
     let obj = {...desig,...data};
     console.log(obj,"esto es la mezcla")
@@ -73,19 +73,14 @@ const Cardnea = (props) => {
               <Button size="small" onClick={handleClickOpen} >Update</Button>
                   <Dialog open={open} onClose={handleClose}>
                     <DialogTitle>Update this neas</DialogTitle>
-                    <form  onSubmit={handleSubmit(onSubmit)}>
+                    <form  onSubmit={handleSubmit(updateNea)}>
                     <DialogContent>
                       <DialogContentText>
                         Please, update the fields, except first(Designation).This field can´t be updated, and its already filled.
                       </DialogContentText>
                       <TextField autoFocus margin="dense" id="designation" label={info.designation} type="text" fullWidth variant="standard" />   
-                      <TextField autoFocus margin="dense" {...register("Discovery_date")} id="Discovery_date" label="Discovery_date" type="text" fullWidth variant="standard" />
-                      <TextField autoFocus margin="dense" {...register("h_mag")} id="h_mag" label="h_mag" type="text" fullWidth variant="standard" />
-                      <TextField autoFocus margin="dense" {...register("moid_au")} id="moid_au" label="moid_au" type="text" fullWidth variant="standard" />
-                      <TextField autoFocus margin="dense" {...register("q_au_1")} id="q_au_1" label="q_au_1" type="text" fullWidth variant="standard" />
-                      <TextField autoFocus margin="dense" {...register("q_au_2")} id="q_au_2" label="q_au_2" type="text" fullWidth variant="standard" />
+                      <TextField autoFocus margin="dense" {...register("Discovery_date")} id="Discovery_date" type="date" fullWidth variant="standard" />
                       <TextField autoFocus margin="dense" {...register("period_yr")} id="period_yr" label="period_yr" type="text" fullWidth variant="standard" />
-                      <TextField autoFocus margin="dense" {...register("i_deg")} id="i_deg" label="i_deg" type="text" fullWidth variant="standard" />
                       <TextField autoFocus margin="dense" {...register("pha")} id="pha" label="pha" type="text" fullWidth variant="standard" />
                       <TextField autoFocus margin="dense" {...register("orbit_class")} id="orbit_class" label="orbit_class" type="text" fullWidth variant="standard" />
                       
