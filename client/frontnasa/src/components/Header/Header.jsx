@@ -1,8 +1,9 @@
-import React, {useContext} from "react";
+import React, {useContext, useState} from "react";
 import Nav from './Nav'
 import logo from '../../assets/nasa.png'
 import { Button } from "@mui/material";
 import { themeContext } from "../../context/themeContext";
+import DarkModeToggle from "react-dark-mode-toggle";
 
 const Header = () => {
    const { theme, toggleTheme } = useContext(themeContext); //hook context
@@ -10,9 +11,11 @@ const Header = () => {
   return  <header className={`header${theme}`}>
               <img src={logo} alt='logo' style={{width: 160}}></img>
               <Nav/>
-              <Button variant="contained" color="secondary" onClick={toggleTheme}>
-               Night mode
-              </Button>
+               <DarkModeToggle
+                     onChange={toggleTheme}
+                      checked={theme}
+                     size={80}
+                  />
               </header>;
 };
 
