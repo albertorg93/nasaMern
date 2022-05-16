@@ -18,7 +18,8 @@ const CreaNeas = () => {
       designation: Nea.designation,
       discovery_date: Nea.discovery_date,
       period_yr: Nea.period_yr,
-      orbit_class: Nea.orbit_class
+      orbit_class: Nea.orbit_class,
+      pha: Nea.pha
     };
 
     console.log(obj);
@@ -30,7 +31,7 @@ const CreaNeas = () => {
     const data = res.data;
     console.log(data);
 
-    if(data==='Nea creada correctamente') {
+    if(data===`Neas ${Nea.designation} guardada correctamente`) {
       setCreated(true);
     }
   };
@@ -48,6 +49,7 @@ const CreaNeas = () => {
             type="date" variant="filled" name="discovery_date" size="small"/>
             <TextField {...register("period_yr")}  label="Orbit period" variant="filled"  name="period_yr" size="normal"/>
             <TextField {...register("orbit_class")}  label="Orbit class" variant="filled" name="orbit_class" size="normal"/>
+            <TextField {...register("pha")}  label="pha" variant="filled" name="pha" size="normal"/>
             <Button size="normal" type="submit">Submit</Button>
           </CardContent>
         </Card>

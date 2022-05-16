@@ -45,7 +45,7 @@ const createNeas = async (req,res) => {
     const newNeas = new datosNeas(req.body);
     try{
     const response = await newNeas.save();
-    res.status(201).send(`Neas ${response.orbit_class} guardada correctamente`)
+    res.status(201).send(`Neas ${response.designation} guardada correctamente`)
     } catch(err){
         res.status(400).json({message:err});
     }

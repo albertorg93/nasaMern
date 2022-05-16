@@ -50,7 +50,7 @@ const Home = () => {
         </div> 
           
           <div className="picture">
-            <h1>Author: {apod.copyright}</h1>
+            <h1>Author of the APOD: {apod.copyright}</h1>
             <h1>Date: {apod.date}</h1> 
             <iframe src={apod.url} frameborder="0" title="apod video"></iframe> : <img alt="astronomy" src={apod.url}></img>
             <h1 className="home">{apod.explanation}</h1>
