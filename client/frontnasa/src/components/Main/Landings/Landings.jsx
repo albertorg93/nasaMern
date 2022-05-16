@@ -48,7 +48,7 @@ const Landings = () => {
     {
       const fetchData = async () => {
         const res = await axios.get(`http://localhost:5000/api/astronomy/landings/class/${valor}`)
-        const data = await res.data.slice(0,50)
+        const data = await res.data.slice(0,100)
         setAsteroid(data)
         
     }
@@ -56,7 +56,7 @@ const Landings = () => {
     } else if(option==="mass"){
       const fetchData = async () => {
         const res = await axios.get(`http://localhost:5000/api/astronomy/landings/mass/${valor}`)
-        const data = await res.data.slice(0,50)
+        const data = await res.data.slice(0,100)
         setAsteroid(data)
         
     }

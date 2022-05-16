@@ -21,7 +21,7 @@ const Home = () => {
     const fetchData = async () => {
         const res = await axios.get(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}`)
         const data = res.data
-        setApod(data.url)
+        setApod(data)
     }
    fetchData()
    }, [])
@@ -29,21 +29,35 @@ const Home = () => {
   
 
 
-  if(apod) {return <>
+  if(apod.media_type==="image") {return <>
   <div className='inicio'>
     <img className='logoinicial' src={logospace} alt="logopokemon" style={{width : 160}}/>
     <h1 className='welcome'> WELCOME TO THE NASA APP MERN</h1>
-    </div>    
-     <h1 className="home">Enjoy the Nasa APOD</h1>
+    </div> 
+      
       <div className="picture">
-         <img src={apod} alt="apod" />
+        <h1>Author: {apod.copyright}</h1>
+         <h1>Date: {apod.date}</h1> 
+         <img src={apod.url} alt="apod" />
+         <h1 className="home">{apod.explanation}</h1>
       </div>
- 
-
   </>
-  ;
 
-} else {
+        } else if(apod.media_type==="video") {return <>
+          <div className='inicio'>
+        <img className='logoinicial' src={logospace} alt="logopokemon" style={{width : 160}}/>
+        <h1 className='welcome'> WELCOME TO THE NASA APP MERN</h1>
+        </div> 
+          
+          <div className="picture">
+            <h1>Author: {apod.copyright}</h1>
+            <h1>Date: {apod.date}</h1> 
+            <iframe src={apod.url} frameborder="0" title="apod video"></iframe> : <img alt="astronomy" src={apod.url}></img>
+            <h1 className="home">{apod.explanation}</h1>
+          </div>
+        </> 
+
+ } else {
   return(
     <>
   <RingLoader color={"lime"} loading={true} css={override} size={80} speedMultiplier={1} margin={2}/>

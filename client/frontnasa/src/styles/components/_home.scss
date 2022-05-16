@@ -1,15 +1,17 @@
 .home{
-    text-align: center;
+    text-align: justify;
+    margin: 40px 50px;
 }
 
 .picture{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     align-content: center;
     align-items: center;
     justify-content: center;
 }
+
 
 .picture img{
     border-radius: 60px;
