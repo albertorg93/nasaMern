@@ -8,6 +8,8 @@ import L from "leaflet"
 import { Link } from "react-router-dom";
 import { css } from "@emotion/react";
 import RingLoader from "react-spinners/RingLoader";
+import { AwesomeButton } from 'react-awesome-button';
+import "react-awesome-button/dist/styles.css";
 
 const override = css`
   display: block;
@@ -84,9 +86,9 @@ const Landings = () => {
                   <option value="class">Class</option>
                   <option value="mass">Mass</option>
                </select>
-                  <input type="submit" value="Send"/>
+               <input type="submit" value="Send"/>
              </form>
-             <Link to="/landlist" className="alllist">View all landings</Link>
+             <AwesomeButton type="secondary" className="aws-btn"><Link to="/landlist" className="viewland">View all landings</Link></AwesomeButton>
              </div>
                
      <MapContainer

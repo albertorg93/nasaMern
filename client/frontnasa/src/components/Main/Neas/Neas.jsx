@@ -4,7 +4,8 @@ import Card from './Cardnea'
 import { css } from "@emotion/react";
 import RingLoader from "react-spinners/RingLoader";
 import { Link } from 'react-router-dom';
-import Button from '@mui/material/Button';
+import { AwesomeButton } from 'react-awesome-button';
+import "react-awesome-button/dist/styles.css";
 
 const override = css`
   display: block;
@@ -51,7 +52,7 @@ const Neas = () => {
   
   if(neas){return (
     <>
-    <Link to="/createneas"><Button variant="contained">Add new neas</Button></Link>
+    <Link to="/createneas"><AwesomeButton type="secondary" className="aws-btn-nea">Add new neas</AwesomeButton></Link>
     <div className="cardcontainer">
      
     {items.map((data, i) =>
@@ -60,8 +61,8 @@ const Neas = () => {
        ) : null )}
        </div>
         <div className="paginacion"> 
-         <button onClick={prevPage}> Prev </button>
-         <button onClick={nextPage}> Next </button>
+         <AwesomeButton type="secondary" className="aws-btn" onClick={prevPage}> Prev </AwesomeButton>
+         <AwesomeButton type="secondary" className="aws-btn" onClick={nextPage}> Next </AwesomeButton>
          <h1 className="current"> Page {currentPage}</h1>
           </div> 
   

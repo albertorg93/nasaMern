@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+
 .searchLanding{
     display: flex;
     flex-direction: column;
@@ -28,3 +30,28 @@
     font-size: 1.3rem;
     font-weight: bold;
 }
+
+.aws-btn {
+    --button-default-height: 48px;
+    --button-default-font-size: 14px;
+    --button-default-border-radius: 6px;
+    --button-horizontal-padding: 20px;
+    --button-raise-level: 5px;
+    --button-hover-pressure: 2;
+    --transform-speed: 0.185s;
+    --button-secondary-color: #206bf5;
+    --button-secondary-color-dark: #ffbc42;
+    --button-secondary-color-light: #dbdbdb;
+    --button-secondary-color-hover: #000000;
+    --button-secondary-border: 4px solid black;
+    
+    }
+
+    .viewland{
+        text-decoration: none;
+        font-family: 'Oswald', sans-serif;
+        font-weight: bold;
+        font-size: 1.3rem;
+        color: white;
+    
+    }
