@@ -34,3 +34,28 @@ box-shadow: 30px -22px 42px 14px rgba(159,33,33,0.79);
     margin-top: 1px;
     margin-bottom: 35px;
   }
+
+  #divlandlist{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    background-color: rgb(227, 180, 180);
+  }
+
+  .btn-class{
+    background: none;
+    border: 0;
+    color: inherit;
+    /* cursor: default; */
+    font: inherit;
+    line-height: normal;
+    overflow: visible;
+    padding: 0;
+    -webkit-user-select: none; /* for button */
+     -webkit-appearance: button; /* for input */
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }

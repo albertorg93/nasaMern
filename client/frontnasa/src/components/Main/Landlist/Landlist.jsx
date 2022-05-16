@@ -6,6 +6,8 @@ import Card from './Cardland'
 import { css } from "@emotion/react";
 import RingLoader from "react-spinners/RingLoader";
 import { Link } from "react-router-dom";
+import { AwesomeButton } from 'react-awesome-button';
+import "react-awesome-button/dist/styles.css";
 
 const override = css`
   display: block;
@@ -52,8 +54,8 @@ const Landlist = () => {
   
   
   if(listLandings){return (
-    <>
-    <Link to="/createlanding"><button>Add new landing</button></Link>
+    <div id="divlandlist">
+    <Link to="/createlanding"><AwesomeButton type="secondary" className="aws-btn">Add new landing</AwesomeButton></Link>
     <div className="cardcontainer">
           {items.map((datos, i) =>
                 datos.geolocation && datos.year? (
@@ -61,12 +63,12 @@ const Landlist = () => {
            ) : null )}
     </div>
            <div className="paginacion">
-              <button onClick={prevPage}> Prev </button>
-              <button onClick={nextPage}> Next </button>
+              <AwesomeButton type="secondary" className="aws-btn"><button onClick={prevPage} className="btn-class"> Prev </button></AwesomeButton>
+              <AwesomeButton type="secondary" className="aws-btn"><button onClick={nextPage} className="btn-class"> Next </button></AwesomeButton>
               <h1 className="current"> Page {currentPage} </h1>
          </div>
 
-         </>
+         </div>
     )} else {
       return(
         <>

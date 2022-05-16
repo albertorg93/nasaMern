@@ -35,7 +35,7 @@ const Landings = () => {
   useEffect(() => {
    const fetchData = async () => {
        const res = await axios.get('http://localhost:5000/api/astronomy/landings/all')
-       const data = await res.data.slice(0,50)
+       const data = await res.data.slice(0,100)
        setAsteroid(data)
        
    }
@@ -104,7 +104,7 @@ const Landings = () => {
                   url="https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryTopo/MapServer/tile/{z}/{y}/{x}"
                   />
               {asteroid.map((data, i) =>
-                data.geolocation ? (
+                data.geolocation && data.year ? (
               <Marker
                 key={i}
                 position={[data.geolocation[0].latitude, data.geolocation[0].longitude]}

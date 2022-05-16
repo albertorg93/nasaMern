@@ -51,8 +51,8 @@ const Neas = () => {
 
   
   if(neas){return (
-    <>
-    <Link to="/createneas"><AwesomeButton type="secondary" className="aws-btn-nea">Add new neas</AwesomeButton></Link>
+    <div id="divneas">
+    <Link to="/createneas"><AwesomeButton type="secondary" className="aws-btn-neas">Add new neas</AwesomeButton></Link>
     <div className="cardcontainer">
      
     {items.map((data, i) =>
@@ -61,13 +61,13 @@ const Neas = () => {
        ) : null )}
        </div>
         <div className="paginacion"> 
-         <AwesomeButton type="secondary" className="aws-btn" onClick={prevPage}> Prev </AwesomeButton>
-         <AwesomeButton type="secondary" className="aws-btn" onClick={nextPage}> Next </AwesomeButton>
+         <AwesomeButton type="secondary" className="aws-btn"><button onClick={prevPage} className="btn-class"> Prev </button></AwesomeButton>
+         <AwesomeButton type="secondary" className="aws-btn"><button onClick={nextPage} className="btn-class"> Next </button></AwesomeButton>
          <h1 className="current"> Page {currentPage}</h1>
           </div> 
   
    
-    </>
+    </div>
     )} else {
       return(
         <>
