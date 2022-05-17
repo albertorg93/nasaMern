@@ -5,6 +5,7 @@ require('dotenv').config()
 // Rutas
 const landing = require('./routes/landings');
 const neas = require('./routes/neas');
+const users = require('./routes/users');
 const cors = require('cors');
 
 // Middlewares
@@ -29,6 +30,7 @@ app.get("/",(req,res)=>res.status(200).json({message:"todo correcto"}))
 // Rutas
 app.use("/api/astronomy/landings",landing);// API
 app.use("/api/astronomy/neas",neas);// API
+app.use("/api/astronomy/user",users);// API
 
 // Middleware de rutas inexistentes
 app.use(notFound);
