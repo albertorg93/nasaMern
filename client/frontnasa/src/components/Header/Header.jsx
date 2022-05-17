@@ -7,6 +7,7 @@ import { themeContext } from "../../context/themeContext";
 import DarkModeToggle from "react-dark-mode-toggle";
 import { userContext } from "../../context/userContext";
 
+
 const Header = () => {
    const { theme, toggleTheme } = useContext(themeContext); //hook context
    const {user} = useContext(userContext);
