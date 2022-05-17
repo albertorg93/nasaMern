@@ -23,7 +23,7 @@ const Header = () => {
                   />
                    {user?
                   <div>
-                     <Logout/>
+                   <Logout></Logout>
                   </div>
                   :<Login/>}
                </div>
