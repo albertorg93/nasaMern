@@ -48,3 +48,28 @@
     background-color:black;
     @include header_style();
 }
+
+#extras{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media screen and (min-width: 950px) {
+    #extras {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .loguser{
+        margin: 0 5px;
+    }
+  }
