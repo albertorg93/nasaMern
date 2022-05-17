@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import axios from 'axios';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
@@ -13,6 +13,9 @@ import land4 from "../../../../assets/landings/land4.png";
 import land5 from "../../../../assets/landings/land5.png";
 import { DialogActions, DialogContent, DialogContentText, DialogTitle, Dialog, TextField } from "@mui/material";
 import {useForm} from 'react-hook-form'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCartPlus } from '@fortawesome/free-solid-svg-icons'
+import { userContext } from "../../../../context/userContext";
 
 
 const Cardland = (props) => {
@@ -21,7 +24,8 @@ const Cardland = (props) => {
   const pictures = [land1,land2,land3, land4, land5];
   const {register, handleSubmit} = useForm()
   const randomizeImages = pictures.sort((a, b) => 0.5 - Math.random());
- 
+  const {user} = useContext(userContext);
+
   const removeLanding = () =>  {
 
     // let valor = info
@@ -105,6 +109,10 @@ const Cardland = (props) => {
                  
                   {/* </form> */}
               <Button size="small" onClick={removeLanding}>Delete</Button>
+              {user?
+              <FontAwesomeIcon icon={faCartPlus} />
+                :""}
+
             </CardActions>
                   </Card>
               

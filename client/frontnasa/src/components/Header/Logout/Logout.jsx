@@ -13,7 +13,7 @@ const Logout = () => {
   };
 
 
-  return <AwesomeButton type="secondary" className="loguser"><button onClick={logoutuser}>Log out</button></AwesomeButton>;
+  return <AwesomeButton type="secondary" className="loguser"><button onClick={logoutuser} className="logoutbutton">Log out</button></AwesomeButton>;
 };
 
 export default Logout;

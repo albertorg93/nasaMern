@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import axios from 'axios';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
@@ -13,6 +13,9 @@ import neas4 from "../../../../assets/neas/neas4.png";
 import neas5 from "../../../../assets/neas/neas5.png";
 import { DialogActions, DialogContent, DialogContentText, DialogTitle, Dialog, TextField } from "@mui/material";
 import {useForm} from 'react-hook-form'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCartPlus } from '@fortawesome/free-solid-svg-icons'
+import { userContext } from "../../../../context/userContext";
 
 const Cardnea = (props) => {
   const info = props.data
@@ -20,6 +23,7 @@ const Cardnea = (props) => {
   const pictures = [neas1,neas2,neas3,neas4,neas5];
   const {register, handleSubmit} = useForm()
   const randomizeImages = pictures.sort((a, b) => 0.5 - Math.random());
+  const {user} = useContext(userContext);
 
   const removeNea = () =>  {
   //   console.log(info)
@@ -95,6 +99,9 @@ const Cardnea = (props) => {
                  
                   {/* </form> */}
               <Button size="small" onClick={removeNea}>Delete</Button>
+              {user?
+              <FontAwesomeIcon icon={faCartPlus} />
+                :""}
             </CardActions>
             </Card>
         
