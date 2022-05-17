@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import axios from "axios";
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -14,6 +14,8 @@ const Loguser = () => {
   const [loged, setLoged] = useState(false);
   const [datos, setData] = useState(false);
   const { register, handleSubmit } = useForm();
+  const {login} = useContext(userContext);
+
   console.log(loged,"esto es loged")
   console.log(datos,"esto es datos")
   const onSubmit = async (user) => {
@@ -31,8 +33,10 @@ const Loguser = () => {
     const data = res.data;
     console.log(data);
 
-    if(data===`Usuario logado`) {
+    if(data===`Usuario ${user.email} logado`) {
       setLoged(true);
+       login(user.email)
+
     } else if (data===`Usuario no existe`){
       setData(true);
     }

@@ -16,7 +16,7 @@ const getUserbyEmail = async (req,res) => {
     const leer = await users.find(u => { return u.email === email && u.password === pass})
     console.log(leer,"esto es leer")
     if(leer){
-    res.status(201).json(`Usuario logado`) 
+    res.status(201).json(`Usuario ${leer.email} logado`) 
     } else {
         res.status(201).json(`Usuario no existe`) 
     }
